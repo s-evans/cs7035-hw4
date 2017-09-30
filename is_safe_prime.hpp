@@ -5,7 +5,8 @@
 #include "thousand_primes_test.hpp"
 
 template<class Prime>
-inline bool is_safe_prime( Prime prime ) {
+inline bool is_safe_prime( Prime prime )
+{
     prime -= 1;
     prime /= 2;
     return thousand_primes_test( prime ) && fibonacci_test( prime );
