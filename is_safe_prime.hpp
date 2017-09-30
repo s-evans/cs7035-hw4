@@ -5,11 +5,10 @@
 #include "thousand_primes_test.hpp"
 
 template<class Prime>
-inline bool is_safe_prime( Prime const& prime ) {
-    Prime must_also_be_prime = prime;
-    must_also_be_prime -= 1;
-    must_also_be_prime /= 2;
-    return thousand_primes_test( must_also_be_prime ) && fibonacci_test( must_also_be_prime ) ;
+inline bool is_safe_prime( Prime prime ) {
+    prime -= 1;
+    prime /= 2;
+    return thousand_primes_test( prime ) && fibonacci_test( prime );
 }
 
 #endif // IS_SAFE_PRIME_HPP

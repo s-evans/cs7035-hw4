@@ -24,7 +24,15 @@ int main()
     for ( mpz_class k = init_k ; true ; ++k, possible_prime += step ) {
         assert( possible_prime >= lower_bound );
 
-        if ( !( thousand_primes_test( possible_prime ) && fibonacci_test( possible_prime ) && is_safe_prime( possible_prime ) ) ) {
+        if ( !thousand_primes_test( possible_prime ) ) {
+            continue;
+        }
+
+        if ( !fibonacci_test( possible_prime ) ) {
+            continue;
+        }
+
+        if ( !is_safe_prime( possible_prime ) ) {
             continue;
         }
 
